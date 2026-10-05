@@ -11,6 +11,11 @@ int main() {
     printf("*(vptr1 + 1):\t%d\n", *(vptr1 + 1));
     printf("vptr1[1]:\t%d\n", vptr1[1]);
 
+    vptr1 = vptr1 + 1;
+    printf("*vptr1:\t\t%d\n", *vptr1);
+    //v = v + 1;
+    //printf("*v:\t\t%d\n", *v);
+
     double *vptr2 = &d[0];
     printf("vptr2:\t\t%p\n", vptr2);
     printf("vptr2 + 1:\t%p\n", vptr2 + 1);
