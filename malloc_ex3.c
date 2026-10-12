@@ -10,6 +10,10 @@ int sum_int_arr(int *a, int size);
 int **create_int_ptr_arr(int size);
 void record_expn(int **expn, int days);
 int total_expn(int **expn, int days);
+void clean_expn(int **expn, int days) {
+    for (int i = 0; i < days; i++)
+        free(*(expn + i));
+}
 
 int main() {
     int days;
@@ -29,6 +33,10 @@ int main() {
 
     record_expn(expn, days);
     printf("Total expense: %d\n", total_expn(expn, days));
+
+    clean_expn(expn, days);
+    free(expn);
+    
 
     return 0;
 }
