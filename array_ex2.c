@@ -5,6 +5,12 @@
     printf("sizeof(a): %zu\n", sizeof(a));
 }*/
 
+// void foo(int *a) {
+//void foo(int (*a)[3]) {
+void foo(int a[][3]) {
+    printf("a in foo: %p\n", a);
+}
+
 int main() {
     // int a[5] = {1, 2, 3, 4, 5};
     int a[] = {1, 2, 3, 4, 5};
@@ -29,10 +35,28 @@ int main() {
 
     printf("&a2[0]: %p\n", &a2[0]);
     printf("&a2[1]: %p\n", &a2[1]);
+    int *p3 = &a2[0][0];
+    printf("p3:\t%p\n", p3);
+    printf("p3+1:\t%p\n", p3+1);
+    printf("p3[1]:\t%d\n", p3[1]);
     int (*p2)[3] = a2;
     //int (*p2)[] = a2;
     printf("p2:\t%p\n", p2);
     printf("p2+1:\t%p\n", p2+1);
+    printf("&p2[1]:\t%p\n", &p2[1]);
+    printf("p2[1]:\t%p\n", p2[1]);
+    printf("p2[1][0]:\t%d\n", p2[1][0]);
+    printf("*(p2[1]):\t%d\n", *(p2[1]));
+    printf("*p2[1]:\t%d\n", *p2[1]);
+    printf("=====================\n");
+    printf("p2[1]:\t\t%p\n", p2[1]);
+    printf("p2[1]+1:\t%p\n", p2[1]+1);
+    printf("p2[1][1]:\t%d\n", p2[1][1]);
+    printf("*(p2+1)+1:\t%p\n", *(p2+1)+1);
+    printf("(p2+1)+1:\t%p\n", (p2+1)+1);        // p2+2
+    printf("*(*(p2+1)+1):\t%d\n", *(*(p2+1)+1));
+
+    foo(a2);
 
     return 0;
 }
