@@ -7,7 +7,7 @@ int main() {
     char s3[8];
     //s2 = s1;
 
-    /*for (int i = 0; i < 16; i++)
+    /*for (int i = 0; s1[i] != '\0'; i++)
         s2[i] = s1[i];*/
     printf("s1: %s\n", s1);
     printf("s2: %s\n", s2);
